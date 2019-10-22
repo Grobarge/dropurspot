@@ -18,6 +18,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { MonoText } from '../components/StyledText';
 
 import Category from './explore/Category';
+import Aroundworld from './explore/aroundworld';
 
 const { height, width } = Dimensions.get('window');
 
@@ -55,11 +56,20 @@ export default class HomeScreen extends Component {
                   <Category imageUri={require('../assets/images/studyspot.jpg')} name="Study" />
                 </ScrollView>
               </View>
-              <View style={{ marginTop: 40, paddingHorizontal: 20, alignItems: 'center', justifyContent: 'center' }}>
+              <View style={{ marginTop: 40, paddingHorizontal: 20, }}>
                 <Text style={{ fontSize: 24, fontWeight: '700', }}>Intoducing SpotDrop Featured</Text>
-                <Text style={{ fontWeight: '100', marginTop: 10 }}>A new selection of spots that are verified</Text>
+                <Text style={{ fontWeight: '400', marginTop: 10 }}>A new selection of spots that are verified</Text>
                 <View style={{ width: width - 40, height: 200, marginTop: 20 }}>
                   <Image source={require('../assets/images/concert.jpg')} style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 5, borderColor: '#dddddd' }} />
+                </View>
+              </View>
+              <View style={{ marginTop: 40, }}>
+                <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20 }}>SpotDrop Around the World</Text>
+                <View style={{ paddingHorizontal: 20, marginTop: 20, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+                  <Aroundworld width={width} name="The Coze Place" type="Party Spot" details="Dm for details" location="Springville, UT" />
+                  <Aroundworld width={width} name="Gamers Central" type="Gaming Spot" details="Huge LAN party" location="Lehi, UT" />
+                  <Aroundworld width={width} name="Spanish Fork House Party" type="Party Spot" details="hit me up, BYOB" location="Springville, UT" />
+                  <Aroundworld width={width} name="Diamond Fork Canyon" type="Camping Spot" details="Gonne hit the trailhead at 5" location="Spanish Fork, UT" />
                 </View>
               </View>
             </View>
