@@ -213,7 +213,7 @@ export default class Authentication extends React.Component {
                         />
                         <TapGestureHandler onHandlerStateChange={this.handleSignIn} >
                             <Animated.View style={{ ...styles.button, }}>
-                                <Text style={{ fontSize: 20, fontWeight: 'bold', }} >Submit</Text>
+                                <Text style={{ fotSize: 20, fontWeight: 'bold', }} >Submit</Text>
                             </Animated.View>
                         </TapGestureHandler>
                     </Animated.View>

@@ -4,13 +4,13 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
 import MapScreen from '../screens/MapScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
   default: {},
+
 });
 
 const HomeStack = createStackNavigator(
@@ -22,13 +22,24 @@ const HomeStack = createStackNavigator(
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
+  tabBarOptions: {
+    activeTintColor: 'red',
+    style: {
+      backgroundColor: 'white',
+      borderTopWidth: 0,
+      shadowOffset: { width: 5, height: 3 },
+      shadowColor: 'black',
+      shadowOpacity: 0.5
+    }
+
+  },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+          ? `ios-home`
+          : 'md-home'
       }
     />
   ),
@@ -36,37 +47,8 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = '';
 
-const LinksStack = createStackNavigator(
-  {
-    Links: LinksScreen,
-  },
-  config
-);
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
-  ),
-};
 
-LinksStack.path = '';
-
-const SettingsStack = createStackNavigator(
-  {
-    Settings: SettingsScreen,
-  },
-  config
-);
-
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
-  ),
-};
-
-SettingsStack.path = '';
 
 const MapStack = createStackNavigator(
   {
@@ -78,20 +60,63 @@ const MapStack = createStackNavigator(
 
 MapStack.navigationOptions = {
   tabBarLabel: 'Map',
+  tabBarOptions: {
+    activeTintColor: 'red',
+    style: {
+      backgroundColor: 'white',
+      borderTopWidth: 0,
+      shadowOffset: { width: 5, height: 3 },
+      shadowColor: 'black',
+      shadowOpacity: 0.5
+    }
+  },
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-map' : 'md-map'} />
+
   ),
 };
 
+
 MapStack.path = '';
+
+const ProfileStack = createStackNavigator(
+  {
+    Profile: ProfileScreen,
+  },
+  config
+);
+
+ProfileStack.navigationOptions = {
+  tabBarLabel: 'Profile',
+  tabBarOptions: {
+    activeTintColor: 'red',
+    style: {
+      backgroundColor: 'white',
+      borderTopWidth: 0,
+      shadowOffset: { width: 5, height: 3 },
+      shadowColor: 'black',
+      shadowOpacity: 0.5
+    }
+  },
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-person' : 'md-options'} />
+  ),
+};
+
+ProfileStack.path = '';
+
+
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  LinksStack,
-  SettingsStack,
   MapStack,
+  ProfileStack,
+
 });
 
 tabNavigator.path = '';
+
+
+
 
 export default tabNavigator;
