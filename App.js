@@ -12,6 +12,8 @@ import aws_exports from './aws-exports';
 
 Amplify.configure(aws_exports);
 
+
+
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
 
@@ -36,8 +38,15 @@ export default function App(props) {
 async function loadResourcesAsync() {
   await Promise.all([
     Asset.loadAsync([
-      require('./assets/images/robot-dev.png'),
-      require('./assets/images/robot-prod.png'),
+      require('./assets/images/bg.jpg'),
+      require('./assets/images/brianbabe.jpg'),
+      require('./assets/images/campingspot.jpg'),
+      require('./assets/images/concert.jpg'),
+      require('./assets/images/gamingspot.jpg'),
+      require('./assets/images/partyspot.jpg'),
+      require('./assets/images/rustic.jpg'),
+      require('./assets/images/studyspot.jpg'),
+
     ]),
     Font.loadAsync({
       // This is the font that we are using for our tab bar

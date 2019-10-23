@@ -168,6 +168,7 @@ export default class Authentication extends React.Component {
                         />
                     </Svg>
                 </Animated.View>
+
                 <View style={{ height: height / 3, justifyContent: 'center' }}>
                     <TapGestureHandler onHandlerStateChange={this.onStateChange} >
                         <Animated.View style={{ ...styles.button, opacity: this.buttonOpacity, transform: [{ translateY: this.buttonY }] }}>
@@ -213,15 +214,15 @@ export default class Authentication extends React.Component {
                         />
                         <TapGestureHandler onHandlerStateChange={this.handleSignIn} >
                             <Animated.View style={{ ...styles.button, }}>
-                                <Text style={{ fotSize: 20, fontWeight: 'bold', }} >Submit</Text>
+                                <Text style={{ fontSize: 20, fontWeight: 'bold', }} >Submit</Text>
                             </Animated.View>
                         </TapGestureHandler>
+
                     </Animated.View>
-
                 </View>
-
             </View >
-        )
+
+        );
     }
 }
 
