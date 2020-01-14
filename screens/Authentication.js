@@ -115,7 +115,7 @@ export default class Authentication extends React.Component {
 
     handleSignIn = () => {
         const { email, password } = this.state;
-        Auth.signIn(email, password)
+        signIn(email, password)
             // If we are successful, navigate to Home screen
             .then(user => this.props.navigation.navigate('Home'))
             // On failure, display error in console
@@ -202,6 +202,7 @@ export default class Authentication extends React.Component {
                             placeholderTextColor="black"
                             onChangeText={(value) => this.setState({ email: value })}
                             placeholder="Email"
+                            keyboardType="email-address"
                         />
                         <TextInput
                             label="Password"
@@ -210,7 +211,7 @@ export default class Authentication extends React.Component {
                             style={styles.TextInput}
                             placeholderTextColor="black"
                             onChangeText={(value) => this.setState({ password: value })}
-                            secureTextEntry
+                            secureTextEntry={true}
                         />
                         <TapGestureHandler onHandlerStateChange={this.handleSignIn} >
                             <Animated.View style={{ ...styles.button, }}>
