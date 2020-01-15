@@ -25,3 +25,5 @@ awsconfiguration.json
 .wactmanconfig
 
 amplify/
+# Local Netlify folder
+.netlify
