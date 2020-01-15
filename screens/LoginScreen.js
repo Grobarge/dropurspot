@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet, Button } from "react-native";
+import { View, StyleSheet, Button, } from "react-native";
 
 import * as Google from "expo-google-app-auth";
 
@@ -28,16 +28,18 @@ export default class LoginScreen extends Component {
                 return { cancelled: true };
             }
         } catch (e) {
-            console.log('LoginScreen.js.js 30 | Error with login', e);
+            console.log('Fuck You', e);
             return { error: true };
         }
     };
 
+
     render() {
         return (
             <View style={styles.container}>
-                <Button title="Login with Google" onPress={this.signInWithGoogle} />
+                <Button style={styles.button} title="Login with Google" onPress={this.signInWithGoogle} />
             </View>
+
         );
     }
 }
@@ -48,5 +50,17 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         alignItems: "center",
         justifyContent: "center"
+    },
+    button: {
+        backgroundColor: 'red',
+        height: 70,
+        marginHorizontal: 20,
+        borderRadius: 35,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: 5,
+        shadowOffset: { width: 2, height: 2 },
+        shadowColor: 'black',
+        shadowOpacity: 0.2,
     }
 });
