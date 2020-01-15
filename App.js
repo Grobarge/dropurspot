@@ -7,10 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 import AppNavigator from './navigation/AppNavigator';
 
-import Amplify from 'aws-amplify';
-import aws_exports from './aws-exports';
 
-Amplify.configure(aws_exports);
 
 
 
@@ -35,6 +32,7 @@ export default function App(props) {
   }
 }
 
+//Makes loading resources faster by caching 
 async function loadResourcesAsync() {
   await Promise.all([
     Asset.loadAsync([

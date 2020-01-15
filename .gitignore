@@ -27,3 +27,8 @@ awsconfiguration.json
 amplify/
 # Local Netlify folder
 .netlify
+
+_tests_
+
+.expo 
+.expo-shared

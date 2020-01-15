@@ -23,7 +23,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "com.googleusercontent.apps.1045821831790-dpm26aipk5nvutsfisi5qtsvtt3fenql"
+        }
+      }
     },
     "android": {
       "package": "com.gajerobarge.dropurspot"
