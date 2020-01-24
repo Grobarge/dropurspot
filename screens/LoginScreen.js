@@ -3,10 +3,19 @@ import { View, StyleSheet, Button, } from "react-native";
 
 import * as Google from "expo-google-app-auth";
 
+
+
+
+
+
+
 const IOS_CLIENT_ID =
     "1045821831790-dpm26aipk5nvutsfisi5qtsvtt3fenql.apps.googleusercontent.com";
 const ANDROID_CLIENT_ID =
     "your-android-client-id";
+
+//Not working for some reason
+// const IOS_CLIENT_ID = process.env.REACT_APP_IOS_CLIENT_ID;
 
 export default class LoginScreen extends Component {
     signInWithGoogle = async () => {
@@ -19,16 +28,17 @@ export default class LoginScreen extends Component {
 
             if (result.type === "success") {
                 console.log("fuck yeah")
+                //after Google login redirect to Profile
                 this.props.navigation.navigate("Profile", {
                     username: result.user.givenName + result.user.familyName,
                     photoUrl: result.user.photoUrl
-                }); //after Google login redirect to Profile
+                });
                 return result.accessToken;
             } else {
                 return { cancelled: true };
             }
         } catch (e) {
-            console.log('Fuck You', e);
+            console.log('Fuck Me :/', e);
             return { error: true };
         }
     };
