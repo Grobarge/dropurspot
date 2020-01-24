@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Button, } from "react-native";
+import { View, StyleSheet, Button, Text } from "react-native";
 
 import * as Google from "expo-google-app-auth";
 
-
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 
@@ -46,10 +46,15 @@ export default class LoginScreen extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <LinearGradient
+                colors={['#7189FF', '#A0DDFF']}
+                style={{
+                    position: 'relative',
+                    flex: 1,
+                    justifyContent: 'center',
+                }} >
                 <Button style={styles.button} title="Login with Google" onPress={this.signInWithGoogle} />
-            </View>
-
+            </LinearGradient>
         );
     }
 }
@@ -59,10 +64,12 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#fff",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+
     },
     button: {
-        backgroundColor: 'red',
+        flex: 2,
+        backgroundColor: 'white',
         height: 70,
         marginHorizontal: 20,
         borderRadius: 35,
@@ -72,5 +79,6 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 2, height: 2 },
         shadowColor: 'black',
         shadowOpacity: 0.2,
+        color: 'white'
     }
 });

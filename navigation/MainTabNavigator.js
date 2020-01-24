@@ -10,7 +10,7 @@ import AddEventScreen from '../screens/AddEventScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
-  default: {},
+  default: { headerMode: 'none' },
 
 });
 
@@ -106,6 +106,8 @@ ProfileStack.navigationOptions = {
 
 ProfileStack.path = '';
 
+
+
 const AddEventStack = createStackNavigator(
   {
     AddEvent: AddEventScreen,
@@ -115,7 +117,7 @@ const AddEventStack = createStackNavigator(
 
 
 AddEventStack.navigationOptions = {
-  tabBarLabel: 'AddEvent',
+  tabBarLabel: 'Create',
   tabBarOptions: {
     activeTintColor: 'red',
     style: {
